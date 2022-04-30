@@ -17,30 +17,32 @@
         <div class="close-btn">&times;</div>
         <div class="form">
             <h2>Add Book</h2>
-            <div class="form-element">
-                <label for="title">Title</label>
-                <input type="text" id="title" placeholder="Book title">
-            </div>
-            <div class="form-element">
-                <label for="author">Author</label>
-                <input type="text" id="author" placeholder="Author's name">
-            </div>
-            <div class="form-element">
-                <label for="pages">Pages</label>
-                <input type="number" id="pages" placeholder="Number of pages">
-            </div>
-            <div class="form-element">
-                <input type="checkbox" id="read">
-                <label for="read">Read yet?</label>
-            </div>
-            <div class="form-element">
-                <button class = "addBook">Add to Library</button>
-            </div>
+            <form action="">
+                <div class="form-element">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" placeholder="Book title" required>
+                </div>
+                <div class="form-element">
+                    <label for="author">Author</label>
+                    <input type="text" id="author" placeholder="Author's name" required>
+                </div>
+                <div class="form-element">
+                    <label for="pages">Pages</label>
+                    <input type="number" id="pages" placeholder="Number of pages" required>
+                </div>
+                <div class="form-element">
+                    <input type="checkbox" id="read">
+                    <label for="read">Read yet?</label>
+                </div>
+                <div class="form-element">
+                    <button class = "addBook">Add to Library</button>
+                </div>
+            </form>
         </div>
     </div>
     <div class="container">
         <div id="header">
-            <h1>The Dynamic Library</h1>
+            <h1>Your Dynamic Library</h1>
             <button class="add-btn">Add Book</button>
         </div>
         <div id="main">
