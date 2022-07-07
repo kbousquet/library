@@ -122,7 +122,8 @@ function resetForm(){
 }
 
 
-document.querySelector(".addBook").addEventListener('click', ()=> {
+document.querySelector(".addBook").addEventListener('click', (e)=> {
+  e.preventDefault();
   let title = document.getElementById("title").value;
   let author = document.getElementById("author").value;
   let pages = document.getElementById("pages").value;
@@ -130,5 +131,7 @@ document.querySelector(".addBook").addEventListener('click', ()=> {
     addBookToLibrary();
     displayBooks();
     resetForm();
+  } else {
+    alert('Please fill out all fields');
   }
 });
