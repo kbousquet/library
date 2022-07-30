@@ -50,7 +50,7 @@ function displayBooks(){
     deleteBtn.classList.add("delete");
     card.appendChild(deleteBtn);
     let deleteImg = document.createElement("img");
-    deleteImg.src="delete.svg";
+    deleteImg.src="img/delete.svg";
     deleteBtn.appendChild(deleteImg);
     let bookInfo = document.createElement("div");
     bookInfo.classList.add("book-info");
@@ -70,9 +70,11 @@ function displayBooks(){
     let readStatus = document.createElement("button");
     readStatus.classList.add("read-status");
     if (book.read){
+      readStatus.classList.remove('not-read');
       readStatus.classList.add("read");
       readStatus.innerHTML = "Read";
     } else {
+      readStatus.classList.remove('read');
       readStatus.classList.add("not-read");
       readStatus.innerHTML = "Not Read";
     }
@@ -82,37 +84,20 @@ function displayBooks(){
       card.remove();
       let index = card.getAttribute('book-index');
       myLibrary.splice(index, 1);
-  })
-  
-    readStatus = document.querySelectorAll(".read-status");
-    readStatus.forEach(button => button.addEventListener("click", statusChange));
-    
+    })
+
+    readStatus.addEventListener("click", function(){
+      console.log("click")
+      if (book.read === true){
+        book.read = false;
+      }
+      else {
+        book.read = true;
+      }
+      displayBooks();
+    });
   });
 }
-
-function removeBook(e){
-
-  let index = myLibrary.findIndex(e);
-  myLibrary.splice(index, 1);
-  displayBooks();
-};
-
-function statusChange(e){
-  let statusbtn = document.querySelector('.read-status');
-  let curr_status = e.target.textContent;
-
-  if(curr_status === 'Read'){
-      statusbtn.innerHTML = 'Not Read';
-      statusbtn.classList.remove('read');
-      statusbtn.classList.add('not-read');
-  }
-  else{
-      statusbtn.innerHTML = 'Read';
-      statusbtn.classList.remove('not-read');
-      statusbtn.classList.add('read');
-  };
-
-};
 
 function resetForm(){
   document.getElementById("title").value = '';

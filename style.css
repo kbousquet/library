@@ -49,6 +49,16 @@ button{
     align-items: center;
 }
 
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.books{
+    height:100px;
+    padding-right: 15px;
+}
+
 .popup{
     position: absolute;
     z-index: 1;
